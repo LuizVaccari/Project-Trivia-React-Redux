@@ -12,6 +12,7 @@ class Header extends Component {
     this.state = {
       name: '',
       img: '',
+      score: '',
     };
   }
 
@@ -26,17 +27,18 @@ class Header extends Component {
     this.setState({
       name,
       img: email,
+      score: ''
     });
   }
 
   render() {
-    const { img, name } = this.state;
+    const { img, name, score } = this.state;
 
     return (
       <div>
         <img src={ `https://www.gravatar.com/avatar/${img} ` } alt="avatar" data-testid="header-profile-picture" />
         <h2 data-testid="header-player-name">{ name }</h2>
-        <p data-testid="header-score">0</p>
+        <p data-testid="header-score">{ score }</p>
       </div>
     );
   }
